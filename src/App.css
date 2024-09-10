@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  background-color: #343a40; /* This is Bootstrap's bg-dark color */
+  color: white; /* To ensure text is white by default */
+  min-height: 100vh;
+  margin: 0;
+}
