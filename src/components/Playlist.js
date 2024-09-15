@@ -2,8 +2,25 @@ import React from 'react'
 
 const Playlist = ( { selectedPlaylistTracks, onClick, submitPlayList }) => {
 
+  const loginSpotify = async () => {
+    const clientId = '';
+    const redirectUri = 'http://localhost:3000/';
+
+    const baseUrl = 'https://accounts.spotify.com/authorize'
+    const scope = 'user-read-private user-read-email';
+    const state = 'owmefwOMEFE91212'
+    var url = baseUrl + '?response_type=token';
+    url += '&client_id=' + encodeURIComponent(clientId);
+    url += '&scope=' + encodeURIComponent(scope);
+    url += '&redirect_uri=' + encodeURIComponent(redirectUri);
+    url += '&state=' + encodeURIComponent(state);
+
+    window.location.replace(url)
+  }
+
   return (
   <>
+  <button className="btn btn-primary" onClick={loginSpotify}>Login Spotify</button>
   <div className="input-group mb-3 bg-dark">
   <span className="input-group-text bg-dark text-white" id="basic-addon1">Playlist Name</span>
   <input type="text" className="form-control bg-dark text-white" placeholder="Playlist" aria-label="Username" aria-describedby="basic-addon1" />
