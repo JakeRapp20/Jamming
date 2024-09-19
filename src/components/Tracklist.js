@@ -1,19 +1,18 @@
-import React from 'react'
-import Track from './Track';
+import React from "react";
+import Track from "./Track";
 
-const Tracklist = ({ trackList, onClick }) => {
-
+const Tracklist = ({ tracksSearched, onClick }) => {
   return (
     <>
-        {trackList.map((track) => {
-          return (
-            <>
-            <Track track={track} keyId={track.id} onClick={onClick}/> 
-            </>
-          )
-        })}
+      {tracksSearched.map((track) => {
+        return (
+          <>
+            <Track track={track} keyId={track.id} onClick={onClick} />
+          </>
+        );
+      })}
     </>
-  )
-}
+  );
+};
 
-export default Tracklist
+export default Tracklist;
